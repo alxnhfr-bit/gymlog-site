@@ -1,0 +1,61 @@
+:root {
+  --bg: #f2f2f7;
+  --card: #ffffff;
+  --text: #111114;
+  --text-2: #5b5b64;
+  --rule: rgba(60, 60, 67, 0.18);
+  --accent: #1f5fd1;
+  --accent-soft: rgba(31, 95, 209, 0.08);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card: #1c1c1e;
+    --text: #f2f2f7;
+    --text-2: #a1a1aa;
+    --rule: rgba(84, 84, 88, 0.6);
+    --accent: #4f86f7;
+    --accent-soft: rgba(79, 134, 247, 0.14);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-inline: 20px;
+  padding-block: max(40px, env(safe-area-inset-top)) 64px;
+}
+main { max-width: 38rem; margin: 0 auto; }
+header { margin-bottom: 32px; }
+.app { font-size: 15px; font-weight: 600; color: var(--accent); letter-spacing: 0.2px; text-decoration: none; }
+h1 { font-size: 34px; line-height: 1.15; letter-spacing: 0.2px; margin: 6px 0 4px; text-wrap: balance; }
+.meta { color: var(--text-2); font-size: 15px; margin: 0; }
+h2 { font-size: 20px; line-height: 1.3; margin: 36px 0 8px; text-wrap: balance; }
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 1.2em; }
+li { margin-bottom: 6px; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+strong { font-weight: 600; }
+.summary {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 18px 20px;
+  border-left: 0;
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+.summary p:last-child { margin-bottom: 0; }
+.links { list-style: none; padding: 0; margin: 24px 0 0; background: var(--card); border-radius: 14px; overflow: hidden; }
+.links li { margin: 0; }
+.links li + li { border-top: 1px solid var(--rule); }
+.links a { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; text-decoration: none; color: var(--text); min-height: 48px; }
+.links a::after { content: "›"; color: var(--text-2); font-size: 22px; line-height: 1; }
+.links a:hover { background: var(--accent-soft); }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--text-2); font-size: 14px; }
